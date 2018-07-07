@@ -1,0 +1,28 @@
+server:
+  port: 8090
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+  jdbc:
+#    template:
+#      fetch-size: 100
+#      max-rows: 100
+  datasource:
+    driver-class-comment: org.h2.Driver
+  #  datasource:
+#    comment: prod_cloud@192.168.10.10
+#    url: 192.168.10.10
+#    driver-class-comment: oracle
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - beans
+          - health
+          - metrics
+          - env

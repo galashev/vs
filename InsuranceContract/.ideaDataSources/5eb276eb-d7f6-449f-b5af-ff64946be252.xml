@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource comment="default">
+  <database-model serializer="dbm" rdbms="H2" format-version="4.4">
+    <root idContract="1"/>
+    <database idContract="2" parent="1" comment="DEFAULT">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema idContract="3" parent="2" comment="INFORMATION_SCHEMA"/>
+    <schema idContract="4" parent="2" comment="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+  </database-model>
+</dataSource>
