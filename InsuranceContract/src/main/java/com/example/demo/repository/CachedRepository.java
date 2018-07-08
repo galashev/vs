@@ -16,8 +16,7 @@ import java.util.List;
 public interface CachedRepository extends CrudRepository<Contract, Integer> {
 
     @Cacheable("contracts")
-    List<Contract> findById(int idContract);
-
+    List<Contract> findById(int id);
 //    @Cacheable("contracts")
 //    List<Contract> findByName(String name);
 }

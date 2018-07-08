@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 @Entity
 public class Contract {
@@ -14,7 +14,7 @@ public class Contract {
     @GeneratedValue
     private int idContract;
 
-    private Date dateContract;
+    private SimpleDateFormat dateContract;
 
     private int idClient;
 
@@ -25,22 +25,25 @@ public class Contract {
     // данные для расчета премии (может выделить во вложенный класс?)
     private int insuredSum;
 
-    private Date dateBeginPeriod;
+    private String dateBeginPeriod; // даты пока возьмем строкой
 
-    private Date dateEndPeriod;
+    private String dateEndPeriod;
 
-//    private List<String> typeProperty;  // может Перечислением сделать?
+    private String typeProperty;  // может Перечислением сделать?
 
     private String yearConstruction;
 
     private String squareConstruction;
+
+    // расчетный параметр
+    private String insuredBonus;
 
 
     public Contract() {
     }
 
 
-    @JsonProperty("ContractNumber")
+    @JsonProperty("ContractNumber(PK)")
     public int getIdContract() {
         return idContract;
     }
@@ -50,15 +53,15 @@ public class Contract {
     }
 
     @JsonProperty("DateContract")
-    public Date getDateContract() {
+    public SimpleDateFormat getDateContract() {
         return dateContract;
     }
 
-    public void setDateContract(Date dateContract) {
+    public void setDateContract(SimpleDateFormat dateContract) {
         this.dateContract = dateContract;
     }
 
-    @JsonProperty("IdClient")
+    @JsonProperty("IdClient(FK)")
     public int getIdClient() {
         return idClient;
     }
@@ -67,7 +70,7 @@ public class Contract {
         this.idClient = idClient;
     }
 
-    @JsonProperty("IdAddress")
+    @JsonProperty("IdAddress(FK)")
     public int getIdAddress() {
         return idAddress;
     }
@@ -95,31 +98,31 @@ public class Contract {
     }
 
     @JsonProperty("DateBeginPeriod")
-    public Date getDateBeginPeriod() {
+    public String getDateBeginPeriod() {
         return dateBeginPeriod;
     }
 
-    public void setDateBeginPeriod(Date dateBeginPeriod) {
+    public void setDateBeginPeriod(String dateBeginPeriod) {
         this.dateBeginPeriod = dateBeginPeriod;
     }
 
     @JsonProperty("DateEndPeriod")
-    public Date getDateEndPeriod() {
+    public String getDateEndPeriod() {
         return dateEndPeriod;
     }
 
-    public void setDateEndPeriod(Date dateEndPeriod) {
+    public void setDateEndPeriod(String dateEndPeriod) {
         this.dateEndPeriod = dateEndPeriod;
     }
 
-//    @JsonProperty("TypeOfProperty")
-//    public List<String> getTypeProperty() {
-//        return typeProperty;
-//    }
-//
-//    public void setTypeProperty(List<String> typeProperty) {
-//        this.typeProperty = typeProperty;
-//    }
+    @JsonProperty("TypeOfProperty")
+    public String getTypeProperty() {
+        return typeProperty;
+    }
+
+    public void setTypeProperty(String typeProperty) {
+        this.typeProperty = typeProperty;
+    }
 
     @JsonProperty("YearOfConstruction")
     public String getYearConstruction() {
@@ -137,6 +140,15 @@ public class Contract {
 
     public void setSquareConstruction(String squareConstruction) {
         this.squareConstruction = squareConstruction;
+    }
+
+    @JsonProperty("InsuredBonus")
+    public String getInsuredBonus() {
+        return insuredBonus;
+    }
+
+    public void setInsuredBonus(String insuredBonus) {
+        this.insuredBonus = insuredBonus;
     }
 
 }
