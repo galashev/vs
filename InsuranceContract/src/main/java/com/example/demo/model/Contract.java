@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 public class Contract {
@@ -14,7 +14,7 @@ public class Contract {
     @GeneratedValue
     private int idContract;
 
-    private SimpleDateFormat dateContract;
+    private Date dateContract;
 
     private int idClient;
 
@@ -22,20 +22,20 @@ public class Contract {
 
     private String comment;
 
-    // данные для расчета премии (может выделить во вложенный класс?)
+    // данные для расчета премии
     private int insuredSum;
 
     private String dateBeginPeriod; // даты пока возьмем строкой
 
     private String dateEndPeriod;
 
-    private String typeProperty;  // может Перечислением сделать?
+    private String typeProperty;  // TODO: листом сделать
 
     private String yearConstruction;
 
     private String squareConstruction;
 
-    // расчетный параметр
+    // вычисляемый параметр
     private String insuredBonus;
 
 
@@ -53,11 +53,11 @@ public class Contract {
     }
 
     @JsonProperty("DateContract")
-    public SimpleDateFormat getDateContract() {
+    public Date getDateContract() {
         return dateContract;
     }
 
-    public void setDateContract(SimpleDateFormat dateContract) {
+    public void setDateContract(Date dateContract) {
         this.dateContract = dateContract;
     }
 
