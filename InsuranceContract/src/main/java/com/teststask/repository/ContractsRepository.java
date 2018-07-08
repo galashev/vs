@@ -1,7 +1,7 @@
-package com.example.demo.repository;
+package com.teststask.repository;
 
+import com.teststask.model.Contract;
 import org.springframework.data.repository.CrudRepository;
-import com.example.demo.model.Contract;
 
 import java.util.List;
 

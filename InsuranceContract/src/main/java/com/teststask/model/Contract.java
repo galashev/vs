@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.teststask.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

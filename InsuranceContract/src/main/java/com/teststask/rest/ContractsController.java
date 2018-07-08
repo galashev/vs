@@ -1,8 +1,8 @@
-package com.example.demo.rest;
+package com.teststask.rest;
 
-import com.example.demo.model.Contract;
-import com.example.demo.repository.ContractsRepository;
-import com.example.demo.service.ContractsProcessing;
+import com.teststask.model.Contract;
+import com.teststask.repository.ContractsRepository;
+import com.teststask.service.ContractsProcessing;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

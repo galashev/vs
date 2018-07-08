@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.teststask.service;
 
 
-import com.example.demo.model.Contract;
+import com.teststask.model.Contract;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
