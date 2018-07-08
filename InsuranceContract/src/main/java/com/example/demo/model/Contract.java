@@ -25,11 +25,11 @@ public class Contract {
     // данные для расчета премии
     private int insuredSum;
 
-    private String dateBeginPeriod; // даты пока возьмем строкой
+    private String dateBeginPeriod; // TODO: даты пока возьмем строкой
 
     private String dateEndPeriod;
 
-    private String typeProperty;  // TODO: листом сделать
+    private String typeProperty;  // TODO: потом листом сделать
 
     private String yearConstruction;
 
@@ -39,8 +39,7 @@ public class Contract {
     private String insuredBonus;
 
 
-    public Contract() {
-    }
+    public Contract() {}
 
 
     @JsonProperty("ContractNumber(PK)")

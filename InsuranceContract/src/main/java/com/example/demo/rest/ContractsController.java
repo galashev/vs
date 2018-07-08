@@ -2,7 +2,7 @@ package com.example.demo.rest;
 
 import com.example.demo.model.Contract;
 import com.example.demo.repository.ContractsRepository;
-import com.example.demo.service.ContractProcessing;
+import com.example.demo.service.ContractsProcessing;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +27,7 @@ public class ContractsController {
         contract.setTypeProperty("1.5");
         contract.setYearConstruction("1.3");
         contract.setSquareConstruction("2");
-        contract.setInsuredBonus(ContractProcessing.CalcInsuredBonus(contract));
+        contract.setInsuredBonus(ContractsProcessing.CalcInsuredBonus(contract));
 
         repository.save(contract);
     }

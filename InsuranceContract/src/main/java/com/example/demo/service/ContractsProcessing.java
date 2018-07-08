@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Service
-public class ContractProcessing {
+public class ContractsProcessing {
     private static final int CAST_TO_DAYS = 1000 * 60 * 60 * 24;
 
     public static String CalcInsuredBonus(Contract contract) {

@@ -30,6 +30,6 @@ public class DemoApplication {
      */
     @Bean
     public CacheManager cacheManager() {
-        return new ConcurrentMapCacheManager("contract");
+        return new ConcurrentMapCacheManager("contracts");
     }
 }
