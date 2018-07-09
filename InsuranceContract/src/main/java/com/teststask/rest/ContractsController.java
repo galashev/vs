@@ -21,7 +21,7 @@ public class ContractsController {
 
         // параметры пока на гвоздях
         contract.setComment("John's house");
-        contract.setInsuredSum(25000);
+        contract.setInsuredSum(29000);
         contract.setDateBeginPeriod("01.08.2018");
         contract.setDateEndPeriod("31.08.2018");
         contract.setTypeProperty("1.5");
@@ -49,32 +49,4 @@ public class ContractsController {
         return "Всё работает замечательно!";
     }
 
-
-
-
-//    /**
-//     * Пример работы с объектами (без ОРМ методологии - возвращает только что созданный объект)
-//     * с применением паттерна DAO(DTO).
-//     * Старый, не эффективный метод.
-//     *
-//     * @return
-//     */
-//    @Deprecated
-//    @GetMapping("/contracts_old")
-//    public List<ContractDto> allContractsDAO() {
-//        return Collections.singletonList(new ContractDto() {{
-//            setId("01");
-//            setName("Dima");
-//        }});
-//    }
-//
-//    @GetMapping("/contract")
-//    public List<ContractDto> getContract() {
-//        return repository.findAll().stream()
-//                .map(contract -> new ContractDto() {{
-//                    setId("" + contract.getIdContract());
-//                    setName(contract.getComment());
-//                }})
-//                .collect(Collectors.toList());
-//    }
 }
