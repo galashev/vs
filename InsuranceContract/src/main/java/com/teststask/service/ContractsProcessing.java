@@ -9,6 +9,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static java.lang.Double.parseDouble;
+import static java.lang.Math.abs;
+
 @Service
 public class ContractsProcessing {
     private static final int CAST_TO_DAYS = 1000 * 60 * 60 * 24;
@@ -69,8 +72,8 @@ public class ContractsProcessing {
 
         // коэффициент за площадь
         if(contract.getSquareProperty() != null) {
-            double squareProperty = Double.valueOf(contract.getSquareProperty());
-            if (squareProperty < 50) {
+            double squareProperty = abs(parseDouble(contract.getSquareProperty()));
+            if (squareProperty > 0 && squareProperty < 50) {
                 rateSquareProperty = 1.2;
             } else if (squareProperty > 100) {
                 rateSquareProperty = 2;
