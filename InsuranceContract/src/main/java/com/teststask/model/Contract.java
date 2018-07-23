@@ -9,8 +9,8 @@ import java.util.Date;
 public class Contract {
 
     @Id
-    @SequenceGenerator(name = "pk_sequence", sequenceName = "contract_id_seq", allocationSize = 1)
-    @Column(name = "id", unique = true, nullable = false)
+    //@SequenceGenerator(name = "pk_sequence", sequenceName = "contract_id_seq", allocationSize = 1)
+    //@Column(name = "id", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idContract;
 
@@ -22,18 +22,18 @@ public class Contract {
 
     private String comment;
 
-    // данные для расчета премии
+    // вводные для расчета премии
     private int insuredSum;
 
     private String dateBeginPeriod; // TODO: даты пока возьмем строкой
 
     private String dateEndPeriod;
 
-    private String typeProperty;  // TODO: потом листом сделать
+    private String typeProperty;  // TODO:
 
-    private String yearConstruction;
+    private String yearProperty;
 
-    private String squareConstruction;
+    private String squareProperty;
 
     // вычисляемый параметр
     private String insuredBonus;
@@ -123,23 +123,21 @@ public class Contract {
         this.typeProperty = typeProperty;
     }
 
-    @JsonProperty("YearOfConstruction")
-    public String getYearConstruction() {
-        return yearConstruction;
+    @JsonProperty("YearOfProperty")
+    public String getYearProperty() {
+        return yearProperty;
     }
 
-    public void setYearConstruction(String yearConstruction) {
-        this.yearConstruction = yearConstruction;
+    public void setYearProperty(String yearProperty) {
+        this.yearProperty = yearProperty;
     }
 
-    @JsonProperty("SquareOfConstruction")
-    public String getSquareConstruction() {
-        return squareConstruction;
+    @JsonProperty("SquareOfProperty")
+    public String getSquareProperty() {
+        return squareProperty;
     }
 
-    public void setSquareConstruction(String squareConstruction) {
-        this.squareConstruction = squareConstruction;
-    }
+    public void setSquareProperty(String squareProperty) { this.squareProperty = squareProperty; }
 
     @JsonProperty("InsuredBonus")
     public String getInsuredBonus() {

@@ -20,13 +20,13 @@ public class ContractsController {
         Contract contract = new Contract();
 
         // параметры пока на гвоздях
-        contract.setComment("John's house");
+        contract.setComment("John's flat");
         contract.setInsuredSum(29000);
         contract.setDateBeginPeriod("01.08.2018");
         contract.setDateEndPeriod("31.08.2018");
-        contract.setTypeProperty("1.5");
-        contract.setYearConstruction("1.3");
-        contract.setSquareConstruction("2");
+        contract.setTypeProperty("Квартира");
+        contract.setYearProperty("Меньше 2000");
+        contract.setSquareProperty("55");
         contract.setInsuredBonus(ContractsProcessing.CalcInsuredBonus(contract));
 
         repository.save(contract);
