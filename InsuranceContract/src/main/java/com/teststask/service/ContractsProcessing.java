@@ -18,30 +18,34 @@ public class ContractsProcessing {
         double rateTypeProperty, rateYearProperty, rateSquareProperty;
 
         // формула расчета страхового периода
-        int diffInDays = (int)( (ConvertFormat(contract.getDateEndPeriod()).getTime() -
-                ConvertFormat(contract.getDateBeginPeriod()).getTime()) / CAST_TO_DAYS );
+        int diffInDays = (int) ((ConvertFormat(contract.getDateEndPeriod()).getTime() -
+                ConvertFormat(contract.getDateBeginPeriod()).getTime()) / CAST_TO_DAYS);
 
         // коэффициент за тип недвижимости
-        if(contract.getTypeProperty() != null){
-            switch(contract.getTypeProperty()){
+        if (contract.getTypeProperty() != null) {
+            switch (contract.getTypeProperty()) {
                 case "Квартира":
                     rateTypeProperty = 1.7;
                     break;
                 case "Дом":
-                    rateTypeProperty = 1.5;;
+                    rateTypeProperty = 1.5;
+                    ;
                     break;
                 case "Комната":
-                    rateTypeProperty = 1.3;;
+                    rateTypeProperty = 1.3;
+                    ;
                     break;
                 default:
                     rateTypeProperty = 0;
                     //System.out.println("Для расчета премии определите тип недвижимости.");
             }
-        } else
+        } else {
             rateTypeProperty = 0;
+            //System.out.println("Для расчета премии определите тип недвижимости.");
+        }
 
         // коэффициент за год постройки
-        if(contract.getYearProperty() != null) {
+        if (contract.getYearProperty() != null) {
             switch (contract.getYearProperty()) {
                 case "Меньше 2000":
                     rateYearProperty = 1.3;
@@ -58,8 +62,10 @@ public class ContractsProcessing {
                     rateYearProperty = 0;
                     //System.out.println("Для расчета премии определите год недвижимости.");
             }
-        } else
+        } else {
             rateYearProperty = 0;
+            //System.out.println("Для расчета премии определите год недвижимости.");
+        }
 
         // коэффициент за площадь
         if(contract.getSquareProperty() != null) {
@@ -71,9 +77,10 @@ public class ContractsProcessing {
             } else {
                 rateSquareProperty = 1.5;
             }
-        } else
+        } else {
             rateSquareProperty = 0;
-
+            //System.out.println("Для расчета премии определите площадь недвижимости.");
+        }
 
         // формула расчета страховой премии
         bonus = ( contract.getInsuredSum() / diffInDays ) * rateTypeProperty
