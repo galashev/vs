@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static java.lang.Double.parseDouble;
-import static java.lang.Math.abs;
 
 @Service
 public class ContractsProcessing {
@@ -72,7 +71,7 @@ public class ContractsProcessing {
 
         // коэффициент за площадь
         if(contract.getSquareProperty() != null) {
-            double squareProperty = abs(parseDouble(contract.getSquareProperty()));
+            double squareProperty = parseDouble(contract.getSquareProperty());
             if (squareProperty > 0 && squareProperty < 50) {
                 rateSquareProperty = 1.2;
             } else if (squareProperty > 100) {
