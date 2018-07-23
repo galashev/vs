@@ -68,12 +68,8 @@ public class ContractsProcessing {
                 rateSquareProperty = 1.2;
             } else if (squareProperty > 100) {
                 rateSquareProperty = 2;
-            } else if (squareProperty >= 50 &&
-                    squareProperty <= 100) {
-                rateSquareProperty = 1.5;
             } else {
-                rateSquareProperty = 0;
-                //System.out.println("Для расчета премии определите площадь недвижимости.");
+                rateSquareProperty = 1.5;
             }
         } else
             rateSquareProperty = 0;
